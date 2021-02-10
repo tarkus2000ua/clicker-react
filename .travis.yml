@@ -1,14 +1,11 @@
 language: node_js
-
 node_js:
-  - "12"
-
+- '12'
 script:
-    - npm test
-    - npm run build
-
+- npm test
+- npm run build
 deploy:
   provider: heroku
   app: clicker-react-2021
   api_key:
-    secure: 65163a3d-6d1a-4666-bf89-832345d40450
+    secure: NyFZulFb1WG86H2azcM8LjX6E+ohA5MWL8kGSjSNohCG+VFrujn6S1XHZt0xLWOyuJuqGSirY6xAg6qfEIXtoHs9CHCevg8vgHUiA4zclFVm03E3o1gmvuVZJMsWZJlAu1qLCMhhvZK6SbWEkgK5ejPgQExEt57CALW1ntD8AZAPAo4P/w+FHb3o5zaZ/zfNr+6Opzm9pufn/u0vSRK7dbiYUG6nC0qMReT0CuwqOFUvf+hJha9HgiaWEheAiCZM86HOI9wJEsdrvIiQxyLKE9HBnqPwadV/A7D17qBFZLgJrVaay0a9SODvk2tyeyvelHITnUnBN8dDgyfHPYRx4fJyttXsZSMA8ruAU4mVTE8UPUiU8lRIUyqy2xe57nJqUumOn8pIWo8TbPKfTOE3T5NA9if0uDLEGPpmz3A2ENJKVoUgM7RvFWrX2SWWcRFvRzHRN6wd1R10Ovqnyp19hiENGmUYmZT952g2GFl9C+5veQSkiOqSWp0Cp16lCfMapPfv/N/jhzScoMQmajIwfSXJ6p6MGJVTCkiMZFvkKgXW5GD+YQ8Y+n8OcspzZ7S0V9luEvuKKAodvVp0gbIfVmNZZ/hhxYJ48uEs0EgR8jGAsV0mwR0lFfm1VDC9i9w//XEG3cvE7zP9sxbs/L1OakJrUteu6iixEAukNHBF/U0=
