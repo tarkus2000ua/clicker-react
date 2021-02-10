@@ -22,14 +22,14 @@ const Game = ({ history }) => {
     const [gameTime, setGameTime] = useState(5);
     const [clickCounter, setClickCounter] = useState(0);
     const [timeLeft, setTimeLeft] = useState(5);
-    const gameStarted = useRef(null);
+    const [gameStarted,setGameStarted] = useState(false);
     const result = useRef(null);
     const timer = useRef(null);
 
     useEffect(() => {
         if (timeLeft === 0) {
             clearInterval(timer.current);
-            gameStarted.current = false;
+            setGameStarted(false)
             result.current = {
                 name: playerName,
                 result: clickCounter,
@@ -41,9 +41,9 @@ const Game = ({ history }) => {
     }, [timeLeft, clickCounter, history, playerName, gameTime, updateResultTable]);
 
     const startGame = () => {
-        if (!gameStarted.current) {
+        if (!gameStarted) {
             setClickCounter(0);
-            gameStarted.current = true;
+            setGameStarted(true);
             timer.current = setInterval(() => {
                 setTimeLeft((prevCount) => prevCount - 1);
             }, 1000);
@@ -62,7 +62,7 @@ const Game = ({ history }) => {
             <h2 style={styles.title}>Hello, {playerName}!</h2>
             <div style={styles.field}>
                 <div style={styles.btnGroup}>
-                    <button style={gameStarted.current ? styles.btnPressed : styles.btn} onClick={startGame}>
+                    <button style={gameStarted ? styles.btnPressed : styles.btn} onClick={startGame}>
                         Click me!
                     </button>
                     <div>Time: {timeLeft} sec left</div>
