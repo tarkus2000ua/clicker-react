@@ -6,3 +6,9 @@ node_js:
 script:
     - npm test
     - npm run build
+
+deploy:
+  provider: heroku
+  app: clicker-react-2021
+  api_key:
+    secure: 65163a3d-6d1a-4666-bf89-832345d40450
